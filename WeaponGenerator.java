@@ -13,11 +13,13 @@ public class WeaponGenerator
 
     public static String generateWeapon()
     {
-        String [] types = {"shotgun", "smg", "handgun", "sniper", "launcher"};
+        String [] weaponTypes = {"shotgun", "smg", "handgun", "sniper", "launcher"};
+        String [] elements = {"fire", "corrosion", "electric"};
         Random randgen = new Random();
-        int weaponIndex = randgen.nextInt(types.length);
+        int weaponIndex = randgen.nextInt(weaponTypes.length);
+        int elementIndex = randgen.nextInt(elements.length);
         int damage = randgen.nextInt(1000);
 
-        return "type " + types[weaponIndex] + " damage "+damage;
+        return "type "+ elements[elementIndex] +" "+ weaponTypes[weaponIndex] + " damage "+ damage;
     }
 }
